@@ -171,7 +171,6 @@ export default function TestimonialSection() {
                       width={64}
                       height={64}
                       className="w-14 h-14 rounded-full object-cover border-2 border-white dark:border-gray-700 shadow-lg"
-                      loading="lazy"
                       priority={active === 0} // ✅ Load gambar pertama lebih cepat
                     />
                   </div>

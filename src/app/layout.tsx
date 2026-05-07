@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
-
+import { RetroGrid } from "@/components/ui/retro-grid";
+import {MarqueeDemo} from "@/components/ui/coba-marquee";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -50,6 +51,27 @@ export const metadata: Metadata = {
   },
 };
 
+const images = [
+  "https://picsum.photos/400/400?grayscale",
+  "https://picsum.photos/500/500?grayscale",
+  "https://picsum.photos/600/600?grayscale",
+  "https://picsum.photos/700/700?grayscale",
+  "https://picsum.photos/300/300?grayscale",
+  "https://picsum.photos/400/400?grayscale",
+  "https://picsum.photos/500/500?grayscale",
+  "https://picsum.photos/600/600?grayscale",
+  "https://picsum.photos/700/700?grayscale",
+  "https://picsum.photos/300/300?grayscale"
+];
+
+const transformStyles = [
+  "rotate(5deg) translate(-150px)",
+  "rotate(0deg) translate(-70px)",
+  "rotate(-5deg)",
+  "rotate(5deg) translate(70px)",
+  "rotate(-5deg) translate(150px)"
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -59,13 +81,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-4xl mx-auto py-2 sm:py-2 px-6",
-          poppins.className // ✅ ini yang benar
+          "min-h-screen bg-background font-sans antialiased",
+          poppins.className
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
-            {children}
+            <main className="max-w-6xl mx-auto px-6 py-2">
+              {children}
+            </main>
+            <MarqueeDemo />
+
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>

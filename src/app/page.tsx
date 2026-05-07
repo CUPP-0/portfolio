@@ -1,3 +1,5 @@
+'use client';
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
@@ -14,8 +16,10 @@ import { Instagram } from "lucide-react";
 import { Highlighter } from "@/components/magicui/highlighter";
 import TestimonialSection from "@/components/testimoni";
 import RollingGallery from "@/components/RollingGallery";
+import { RetroGrid } from "@/components/ui/retro-grid";
 
 const BLUR_FADE_DELAY = 0.04;
+
 
 export default function Page() {
   return (
@@ -33,10 +37,11 @@ export default function Page() {
           colors: ["#facc15", "#ec4899", "#6366f1"], // kuning, pink, indigo
         }}
       />
+
       <Particles
         className="fixed inset-0 -z-10"
         quantity={150}
-        color="#60a5fa" // biru
+        color="#00bd19" // biru
         staticity={40}
         ease={60}
         size={1}
@@ -164,7 +169,7 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-6xl mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
@@ -187,7 +192,7 @@ export default function Page() {
         </div>
       </section>
       <section id="hackathons">
-        <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full ">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -226,49 +231,16 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="testimonials " className="px-6 ">
+      {/*       <section id="testimonials " className="px-6 ">
         <div style={{ height: "600px", position: "relative" }}>
           <TestimonialSection />
         </div>
-      </section>
+      </section> */}
 
-      <section className="w-full text-center pt-[60%] sm:pt-[25%]" id="gallery">
-        <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm mb-3">
-          Galerry
-        </div>
-        <h1 className="text-center text-3xl font-bold sm:text-5xl">
-          My Gallery
-        </h1>
-        <RollingGallery autoplay={true} pauseOnHover={true} />
-      </section>
+      
 
-      <section id="contact" className="relative py-0  to-background">
-        <div className="text-center space-y-6 max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-bold sm:text-5xl">Get in Touch</h2>
-          <p className="text-muted-foreground text-lg">
-            Want to chat? Just shoot me a{" "}
-            <Link
-              href={DATA.contact.social.instagram.url}
-              className="text-primary hover:underline"
-            >
-              DM on Instagram
-            </Link>{" "}
-            and I&apos;ll respond whenever I can.
-          </p>
-          <div className="flex justify-center gap-4 mt-6">
-            {Object.entries(DATA.contact.social).map(([key, social]) => (
-              <Link
-                key={key}
-                href={social.url}
-                target="_blank"
-                className="rounded-full p-3 bg-primary/10 hover:bg-primary/20 transition"
-              >
-                <social.icon className="h-6 w-6 text-primary" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+
+
     </main>
   );
 }
