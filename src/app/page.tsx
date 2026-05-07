@@ -15,7 +15,6 @@ import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Instagram } from "lucide-react";
 import { Highlighter } from "@/components/magicui/highlighter";
 import TestimonialSection from "@/components/testimoni";
-import RollingGallery from "@/components/RollingGallery";
 import { RetroGrid } from "@/components/ui/retro-grid";
 
 const BLUR_FADE_DELAY = 0.04;
