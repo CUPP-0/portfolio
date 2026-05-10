@@ -1,7 +1,12 @@
 'use client';
 
-import { Marquee } from '@/components/ui/marquee';
+
 import { RetroGrid } from '@/components/ui/retro-grid';
+import dynamic from 'next/dynamic';
+const Marquee = dynamic(
+  () => import('@/components/ui/marquee').then((mod) => mod.Marquee),
+  { ssr: false }
+);
 
 const images = [
     './launchbest.jpeg',
