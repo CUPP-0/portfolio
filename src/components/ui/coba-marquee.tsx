@@ -2,19 +2,15 @@
 
 
 import { RetroGrid } from '@/components/ui/retro-grid';
-import dynamic from 'next/dynamic';
-const Marquee = dynamic(
-  () => import('@/components/ui/marquee').then((mod) => mod.Marquee),
-  { ssr: false }
-);
+import { Marquee } from '@/components/ui/marquee';
 
 const images = [
-    './launchbest.jpeg',
-    './rapat.jpeg',
-    './wawancara.jpg',
-    './koding.jpg',
-    './juara.jpg',
-    './infra.jpg',
+    '/launchbest.jpeg',
+    '/rapat.jpeg',
+    '/wawancara.jpg',
+    '/koding.jpg',
+    '/juara.jpg',
+    '/infra.jpg',
 ];
 
 const firstRow = images.slice(0, images.length / 2);
