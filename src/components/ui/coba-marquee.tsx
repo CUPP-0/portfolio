@@ -45,7 +45,7 @@ const ImageCard = ({ img }: { img: string }) => {
 
 export function MarqueeDemo() {
     return (
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 gap-6 h-screen">
+        <div suppressHydrationWarning className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10 gap-6 h-screen">
             <div className="absolute inset-0 -z-10">
                 <RetroGrid />
             </div>
